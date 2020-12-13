@@ -11,10 +11,11 @@ navigator.mediaDevices
   })
   .then((stream) => {
     myVideoStream = stream;
+    addVideoStream(myVideo, stream)
   });
 
 const addVideoStream = (video, stream) => {
-  video.scrObject = stream;
+  video.srcObject = stream;
   video.addEventListener('loadedmetadata', () => {
     video.play();
   });
